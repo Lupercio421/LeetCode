@@ -1,6 +1,10 @@
 package com.daniel.DeleteFromArray;
 
-public class DeleteFromSortedArray {
+import java.lang.reflect.Array;
+import java.util.HashMap;
+import java.util.Objects;
+
+public class DeleteFromSortedArraySolution {
 
     /*
     Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in nums.
@@ -16,7 +20,7 @@ public class DeleteFromSortedArray {
 //        }
     // Time: O(N), Space: O(1)
 //    }
-    public int removeDuplicates(int[] nums){
+    public static int removeDuplicates(int[] nums){
         int n = nums.length;
         int insertIndex = 1;
         if (n == 0){
@@ -29,5 +33,13 @@ public class DeleteFromSortedArray {
             }
         }
         return insertIndex;
+    }
+
+    public static void main(String[] args){
+        int[] testArray = new int[]{1,1,2,3,5};
+        System.out.println("Should return 4: " + removeDuplicates(testArray));
+        HashMap<String, Object> testMap = new HashMap<>();
+        testMap.put("aa",removeDuplicates(testArray));
+        System.out.println("What is the test map: " + testMap);
     }
 }
