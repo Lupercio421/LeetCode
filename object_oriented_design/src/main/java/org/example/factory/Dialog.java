@@ -4,9 +4,8 @@ public abstract class Dialog {
 
     public abstract Button createButton();
 
-    public void render(){
+    public void renderWindow(){
         Button okButton = createButton();
-        okButton.onClick(this.closeDialog);
         okButton.render();
     }
 }

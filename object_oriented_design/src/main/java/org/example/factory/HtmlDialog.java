@@ -1,6 +1,6 @@
 package org.example.factory;
 
-public class WebDialog extends Dialog{
+public class HtmlDialog extends Dialog{
     @Override
     public Button createButton() {
         return new HTMLButton();

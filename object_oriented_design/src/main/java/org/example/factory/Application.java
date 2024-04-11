@@ -2,22 +2,27 @@ package org.example.factory;
 
 public class Application {
 
-    private Dialog dialog;
+    private static Dialog dialog;
 
-    private void initialize(){
-        if (config.OS = "Windows"){
+    public static void main(String[] args){
+        configure();
+        runBusinessLogic();
+    }
+
+    static void runBusinessLogic() {
+        dialog.renderWindow();
+    }
+
+
+    static void configure(){
+        if (System.getProperty("os.name").equals("Windows 10")){
             dialog = new WindowsDialog();
         }
-        else if (config.OS = "Web") {
-            dialog = new WebDialog();
+        else if (System.getProperty("os.name").equals("Web Based Windows")) {
+            dialog = new HtmlDialog();
         }
         else{
             throw new RuntimeException("ERROR! Unkown operating system.");
         }
-    }
-
-    public void main(String[] args){
-        this.initialize();
-        dialog.render();
     }
 }
